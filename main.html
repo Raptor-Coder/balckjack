@@ -1,0 +1,45 @@
+<html><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blackjack Simulator</title>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="header">
+        <h1>Blackjack</h1>
+    </div>
+    <div class="game-container">
+        <div class="sidebar">
+            <div class="balance">Balance: $<span id="balance">100</span></div>
+            <div class="bet">Current Bet: $<span id="current-bet">0</span></div>
+            <div class="chip-container">
+                <div class="chip chip-1" data-value="1">$1</div>
+                <div class="chip chip-5" data-value="5">$5</div>
+                <div class="chip chip-10" data-value="10">$10</div>
+                <div class="chip chip-25" data-value="25">$25</div>
+            </div>
+            <button id="reset-button">Reset Game</button>
+        </div>
+        <div class="main-content">
+            <h2>Dealer's Hand</h2>
+            <div id="dealer-hand" class="hand"></div>
+            <h2>Your Hand</h2>
+            <div id="player-hand" class="hand"></div>
+            <div class="controls">
+                <button id="hit-button" disabled>Hit</button>
+                <button id="stand-button" disabled>Stand</button>
+                <button id="deal-button">Deal</button>
+            </div>
+            <div id="message" class="message"></div>
+        </div>
+    </div>
+
+<script>
+const deck = [];
+const suits = ['♠', '♥', '♦', '♣'];
+const values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A'];
+let playerHand = [];
+let dealerHand = [];
+let gameOver = false;
+let playerBalance = 100;
+let currentBet = 0;
