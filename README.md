@@ -1,2 +1,2 @@
 # balckjack
-A blackjack simulator (only for education perposes, no real gambling)
+A blackjack simulator (only for education purposes, no real gambling)
